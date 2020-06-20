@@ -27,7 +27,7 @@ def promote(bot: Bot, update: Update, args: List[str]) -> str:
     user = update.effective_user  # type: Optional[User]
     chat = update.effective_chat  # type: Optional[Chat]
     conn = connected(bot, update, chat, user.id)
-    if not conn == False:
+    if not conn is False:
         chatD = dispatcher.bot.getChat(conn)
     else:
         chatD = update.effective_chat
@@ -82,7 +82,7 @@ def demote(bot: Bot, update: Update, args: List[str]) -> str:
     message = update.effective_message  # type: Optional[Message]
     user = update.effective_user  # type: Optional[User]
     conn = connected(bot, update, chat, user.id)
-    if not conn == False:
+    if not conn is False:
         chatD = dispatcher.bot.getChat(conn)
     else:
         chatD = update.effective_chat
@@ -196,7 +196,7 @@ def invite(bot: Bot, update: Update):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
     conn = connected(bot, update, chat, user.id, need_admin=False)
-    if not conn == False:
+    if not conn is False:
         chatP = dispatcher.bot.getChat(conn)
     else:
         chatP = update.effective_chat
@@ -225,7 +225,7 @@ def adminlist(bot, update):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
     conn = connected(bot, update, chat, user.id, need_admin=False)
-    if not conn == False:
+    if not conn is False:
         chatP = dispatcher.bot.getChat(conn)
     else:
         chatP = update.effective_chat
@@ -264,7 +264,7 @@ def reaction(bot: Bot, update: Update, args: List[str]) -> str:
             update.effective_message.reply_text("Please enter True or False!", parse_mode=ParseMode.MARKDOWN)
     else:
         status = sql.command_reaction(chat.id)
-        if status == False:
+        if status is False:
             update.effective_message.reply_text("Reaction on admin commands for users now `disabled`!", parse_mode=ParseMode.MARKDOWN)
         else:
             update.effective_message.reply_text("Reaction on admin commands for users now `enabled`!", parse_mode=ParseMode.MARKDOWN)

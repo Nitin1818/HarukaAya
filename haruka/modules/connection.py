@@ -52,7 +52,7 @@ def connect_chat(bot, update, args):
                 update.effective_message.reply_text(tld(chat.id, "Invalid Chat ID provided!"))
                 return
             if (bot.get_chat_member(connect_chat, update.effective_message.from_user.id).status in ('administrator', 'creator') or 
-                                     (sql.allow_connect_to_chat(connect_chat) == True) and 
+                                     (sql.allow_connect_to_chat(connect_chat) is True) and 
                                      bot.get_chat_member(connect_chat, update.effective_message.from_user.id).status in ('member')) or (
                                      user.id in SUDO_USERS):
 
@@ -107,7 +107,7 @@ def connect_chat(bot, update, args):
 
     elif update.effective_chat.type == 'supergroup':
         connect_chat = chat.id
-        if (bot.get_chat_member(connect_chat, update.effective_message.from_user.id).status in ('administrator', 'creator') or (sql.allow_connect_to_chat(connect_chat) == True) and bot.get_chat_member(connect_chat, update.effective_message.from_user.id).status in'member') or (user.id in SUDO_USERS):
+        if (bot.get_chat_member(connect_chat, update.effective_message.from_user.id).status in ('administrator', 'creator') or (sql.allow_connect_to_chat(connect_chat) is True) and bot.get_chat_member(connect_chat, update.effective_message.from_user.id).status in'member') or (user.id in SUDO_USERS):
 
             connection_status = sql.connect(update.effective_message.from_user.id, connect_chat)
             if connection_status:
@@ -148,7 +148,7 @@ def connected(bot, update, chat, user_id, need_admin=True):
     if chat.type == chat.PRIVATE and sql.get_connected_chat(user_id):
         conn_id = sql.get_connected_chat(user_id).chat_id
         if (bot.get_chat_member(conn_id, user_id).status in ('administrator', 'creator') or 
-                                     (sql.allow_connect_to_chat(connect_chat) == True) and 
+                                     (sql.allow_connect_to_chat(connect_chat) is True) and 
                                      bot.get_chat_member(user_id, update.effective_message.from_user.id).status in ('member')) or (
                                      user_id in SUDO_USERS):
             if need_admin:

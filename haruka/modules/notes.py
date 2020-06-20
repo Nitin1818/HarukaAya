@@ -69,9 +69,9 @@ def get(bot, update, notename, show_none=True, no_format=False):
 					bot.forward_message(chat_id=chat_id, from_chat_id=MESSAGE_DUMP, message_id=note.value)
 				except BadRequest as excp:
 					if excp.message == "Message to forward not found":
-                                                message.reply_text("This message seems to have been lost - I'll remove it "
-                                                                                   "from your notes list.")
-                                                sql.rm_note(chat_id, notename)
+					                                           message.reply_text("This message seems to have been lost - I'll remove it "
+					                                                                              "from your notes list.")
+					                                           sql.rm_note(chat_id, notename)
 					else:
 						raise
 			else:
@@ -199,7 +199,7 @@ def clear(bot: Bot, update: Update, args: List[str]):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
     conn = connected(bot, update, chat, user.id)
-    if not conn == False:
+    if not conn is False:
         chat_id = conn
         chat_name = dispatcher.bot.getChat(conn).title
     else:
@@ -223,7 +223,7 @@ def list_notes(bot: Bot, update: Update):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
     conn = connected(bot, update, chat, user.id, need_admin=False)
-    if not conn == False:
+    if not conn is False:
         chat_id = conn
         chat_name = dispatcher.bot.getChat(conn).title
         msg = "*List of Notes in {}:*\n"

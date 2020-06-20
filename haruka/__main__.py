@@ -244,7 +244,7 @@ def control_panel(bot, update):
         chatP = chat
         conn = connected(bot, update, chat, user.id)
 
-        if not conn == False:
+        if not conn is False:
             chat = bot.getChat(conn)
         else:
             query.message.reply_text(text="Error with connection to chat")
@@ -335,7 +335,7 @@ def help_button(bot: Bot, update: Update):
             mod_name = tld(chat.id, HELPABLE[module].__mod_name__)
             help_txt = tld_help(chat.id, HELPABLE[module].__mod_name__)
 
-            if help_txt == False:
+            if help_txt is False:
                 help_txt = HELPABLE[module].__help__
 
             text = tld(chat.id, "Here is the help for the *{}* module:\n{}").format(mod_name, help_txt)
@@ -398,7 +398,7 @@ def get_help(bot: Bot, update: Update):
         mod_name = tld(chat.id, HELPABLE[module].__mod_name__)
         help_txt = tld_help(chat.id, HELPABLE[module].__mod_name__)
 
-        if help_txt == False:
+        if help_txt is False:
             help_txt = HELPABLE[module].__help__
 
         text = tld(chat.id, "Here is the help for the *{}* module:\n{}").format(mod_name, help_txt)
