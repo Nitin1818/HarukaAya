@@ -139,7 +139,7 @@ if is_module_loaded(FILENAME):
         sql.migrate_chat(old_chat_id, new_chat_id)
 
 
-    def __chat_settings__(bot, update, chat, chatP, user):
+    def __chat_settings__(_bot, _update, chat, _chatP, _user):
         log_channel = sql.get_chat_log_channel(chat.id)
         if log_channel:
             log_channel_info = dispatcher.bot.get_chat(log_channel)
