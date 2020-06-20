@@ -376,7 +376,7 @@ def security(bot: Bot, update: Update, args: List[str]) -> str:
         var = args[0].lower()
         if (var == "yes" or var == "y" or var == "on"):
             check = bot.getChatMember(chat.id, bot.id)
-            if check.status == 'member' or check['can_restrict_members'] == False:
+            if check.status == 'member' or check['can_restrict_members'] is False:
                 text = "I can't limit people here! Make sure I'm an admin so I can mute someone!"
                 update.effective_message.reply_text(text, parse_mode="markdown")
                 return ""

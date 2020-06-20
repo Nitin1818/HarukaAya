@@ -29,7 +29,7 @@ def mute(bot: Bot, update: Update, args: List[str]) -> str:
     message = update.effective_message  # type: Optional[Message]
 
     conn = connected(bot, update, chat, user.id)
-    if not conn == False:
+    if not conn is False:
         chatD = dispatcher.bot.getChat(conn)
     else:
         if chat.type == "private":
@@ -90,7 +90,7 @@ def unmute(bot: Bot, update: Update, args: List[str]) -> str:
     message = update.effective_message  # type: Optional[Message]
 
     conn = connected(bot, update, chat, user.id)
-    if not conn == False:
+    if not conn is False:
         chatD = dispatcher.bot.getChat(conn)
     else:
         if chat.type == "private":
@@ -145,7 +145,7 @@ def temp_mute(bot: Bot, update: Update, args: List[str]) -> str:
     message = update.effective_message  # type: Optional[Message]
 
     conn = connected(bot, update, chat, user.id)
-    if not conn == False:
+    if not conn is False:
         chatD = dispatcher.bot.getChat(conn)
     else:
         if chat.type == "private":
@@ -234,7 +234,7 @@ def nomedia(bot: Bot, update: Update, args: List[str]) -> str:
     message = update.effective_message  # type: Optional[Message]
 
     conn = connected(bot, update, chat, user.id)
-    if not conn == False:
+    if not conn is False:
         chatD = dispatcher.bot.getChat(conn)
     else:
         if chat.type == "private":
@@ -292,7 +292,7 @@ def media(bot: Bot, update: Update, args: List[str]) -> str:
     message = update.effective_message  # type: Optional[Message]
 
     conn = connected(bot, update, chat, user.id)
-    if not conn == False:
+    if not conn is False:
         chatD = dispatcher.bot.getChat(conn)
     else:
         if chat.type == "private":
@@ -346,7 +346,7 @@ def temp_nomedia(bot: Bot, update: Update, args: List[str]) -> str:
     message = update.effective_message  # type: Optional[Message]
 
     conn = connected(bot, update, chat, user.id)
-    if not conn == False:
+    if not conn is False:
         chatD = dispatcher.bot.getChat(conn)
     else:
         if chat.type == "private":
