@@ -1,12 +1,9 @@
 import re
 from io import BytesIO
 from time import sleep
-from typing import Optional
-
 from typing import Optional, List
-from telegram import TelegramError, Chat, Message
-from telegram import Update, Bot
-from telegram import ParseMode
+
+from telegram import TelegramError, Chat, Message, ParseMode, Update, Bot
 from telegram.error import BadRequest
 from telegram.ext import MessageHandler, Filters, CommandHandler
 from telegram.ext.dispatcher import run_async
@@ -231,7 +228,7 @@ def __user_info__(user_id, chat_id):
     if user_id == dispatcher.bot.id:
         return tld(chat_id, "I've seen them in... Wow. Are they stalking me? They're in all the same places I am... oh. It's me.")
     num_chats = sql.get_user_num_chats(user_id)
-    return tld(chat_id, "I've seen them in <code>{}</code> chats in total.").format(num_chats)
+    return tld(chat_id, "I've seen them in <code>{}</code> chats total.").format(num_chats)
 
 
 def __stats__():
