@@ -35,7 +35,7 @@ class CustomCommandHandler(tg.CommandHandler):
 
 
 class CustomRegexHandler(tg.RegexHandler):
-    def __init__(self, pattern, callback, friendly="", **kwargs):
+    def __init__(self, pattern, callback, _friendly="", **kwargs):
         super().__init__(pattern, callback, **kwargs)
 
 class GbanLockHandler(tg.CommandHandler):

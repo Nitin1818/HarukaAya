@@ -256,7 +256,7 @@ def __migrate__(old_chat_id, new_chat_id):
     sql.migrate_chat(old_chat_id, new_chat_id)
 
 
-def __chat_settings__(bot, update, chat, chatP, user):
+def __chat_settings__(_bot, _update, chat, _chatP, _user):
     cust_filters = sql.get_chat_triggers(chat.id)
     return "There are `{}` custom filters here.".format(len(cust_filters))
 

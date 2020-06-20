@@ -740,7 +740,7 @@ def __migrate__(old_chat_id, new_chat_id):
 
 
 
-def __chat_settings__(bot, update, chat, chatP, user):
+def __chat_settings__(_bot, _update, chat, _chatP, _user):
     chat_id = chat.id
     welcome_pref, _, _, _ = sql.get_welc_pref(chat_id)
     goodbye_pref, _, _, _ = sql.get_gdbye_pref(chat_id)

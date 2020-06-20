@@ -126,7 +126,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         except:
             print("Nut")
 
-def send_start(bot, update):
+def send_start(_bot, update):
     #Try to remove old message
     try:
         query = update.callback_query
@@ -523,7 +523,7 @@ def get_settings(bot: Bot, update: Update):
         send_settings(chat.id, user.id, update, True)
 
 
-def migrate_chats(bot: Bot, update: Update):
+def migrate_chats(_bot: Bot, update: Update):
     msg = update.effective_message  # type: Optional[Message]
     if msg.migrate_to_chat_id:
         old_chat = update.effective_chat.id

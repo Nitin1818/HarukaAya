@@ -238,7 +238,7 @@ def rest_handler(bot: Bot, update: Update):
             break
 
 
-def build_lock_message(chat, chatP, user, chatname):
+def build_lock_message(chat, chatP, _user, chatname):
     locks = sql.get_locks(chat.id)
     restr = sql.get_restr(chat.id)
     if not (locks or restr):
@@ -288,7 +288,7 @@ def __migrate__(old_chat_id, new_chat_id):
     sql.migrate_chat(old_chat_id, new_chat_id)
 
 
-def __chat_settings__(bot, update, chat, chatP, user):
+def __chat_settings__(_bot, _update, chat, chatP, user):
     chatname = tld(chatP.id, "this chat")
     return build_lock_message(chat, chatP, user, chatname)
 

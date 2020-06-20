@@ -11,7 +11,7 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryH
 import haruka.modules.sql.connection_sql as con_sql
 
 
-def keyboard(bot, update):
+def keyboard(_bot, update):
     user = update.effective_user  # type: Optional[User]
     conn_id = con_sql.get_connected_chat(user.id)
     if conn_id and not conn_id is False:
