@@ -230,7 +230,8 @@ def adminlist(bot, update):
     else:
         chatP = update.effective_chat
         if chat.type == "private":
-            exit(1)
+            update.effective_message.reply_text("This command can only be used in a group, not in PM.")
+            return
     
     administrators = chatP.get_administrators()
 
