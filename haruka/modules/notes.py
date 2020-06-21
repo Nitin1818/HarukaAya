@@ -2,7 +2,8 @@ import re, ast
 from io import BytesIO
 from typing import Optional, List
 
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, InlineKeyboardMarkup, Message, Update, Bot
+from telegram import MAX_MESSAGE_LENGTH, ParseMode, InlineKeyboardMarkup
+from telegram import Message, Update, Bot
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, RegexHandler
 from telegram.ext.dispatcher import run_async
@@ -145,7 +146,7 @@ def cmd_get(bot: Bot, update: Update, args: List[str]):
 	elif len(args) >= 1:
 		get(bot, update, args[0], show_none=True)
 	else:
-		update.effective_message.reply_text("Get rekt")
+		update.effective_message.reply_text("Get rekt.")
 
 
 @run_async
