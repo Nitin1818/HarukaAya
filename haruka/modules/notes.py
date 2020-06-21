@@ -2,8 +2,7 @@ import re, ast
 from io import BytesIO
 from typing import Optional, List
 
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, InlineKeyboardMarkup
-from telegram import Message, Update, Bot
+from telegram import MAX_MESSAGE_LENGTH, ParseMode, InlineKeyboardMarkup, Message, Update, Bot
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, RegexHandler
 from telegram.ext.dispatcher import run_async
@@ -87,7 +86,7 @@ def get(bot, update, notename, show_none=True, no_format=False):
 					sql.rm_note(chat_id, notename)
 
 				else:
-					raise
+					pass
 		else:
 			text = note.value
 			keyb = []
