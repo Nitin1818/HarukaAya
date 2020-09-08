@@ -31,9 +31,14 @@
       "value": "ANYTHING"
     },
     "MESSAGE_DUMP": {
-      "description": "required: a chat where your gbanlogs replied saved messages are stored",
+      "description": "a chat where your gbanlogs replied saved messages are stored",
       "value": "",
       "required": true 
+    },
+    "DATABASE_URL": {
+      "description": "well just get SQL database from elephant sql literally heroku one sucks",
+      "value": "sqldbtype://username:pw@hostname:port/db_name",
+      "required": false
     },
     "SUDO_USERS": {
       "description": "A space separated list of user_ids which should be considered sudo users",
@@ -72,16 +77,7 @@
       "value": "CAADBQADiAADYPOVKLJfqFvHvHHyAg",
       "required": true
     }
-  },
-  "addons": [
-    {
-      "plan": "heroku-postgresql",
-      "options": {
-        "version": "12.4"
-      }
-    }
-  ]
-}
+   }
 
 
 
